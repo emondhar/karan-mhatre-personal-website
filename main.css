@@ -12,7 +12,7 @@ ul {
 body {
   font-family: 'Open Sans', sans-serif;
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
   background-color: #F3F3F2;
 }
 
@@ -22,7 +22,7 @@ hr {
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -66,7 +66,7 @@ header h1 {
 }
 
 header h2 {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   font-weight: 400;
 }
@@ -85,13 +85,13 @@ header h2.article-heading {
 }
 
 .container h4 {
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   font-weight: 400;
 }
 
 .container h3 {
-  font-size: 14px;
+  font-size: 16px;
   text-transform: lowercase;
   font-family: 'Montserrat', sans-serif;
   color: #333;
@@ -201,6 +201,7 @@ img.profile-image {
     font-size: 32px;
     color: #333;
     margin: 60px 0px;
+    margin-bottom: 30px;
   }
 
   .container h3 {
