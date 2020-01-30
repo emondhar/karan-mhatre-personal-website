@@ -177,6 +177,11 @@ ul.social-links li a:hover {
   height: auto;
 }
 
+img.profile-image {
+  width: 100%;
+  margin-top: 20px;
+}
+
 @media (min-width: 600px) {
   .container, header {
     width: 600px;
