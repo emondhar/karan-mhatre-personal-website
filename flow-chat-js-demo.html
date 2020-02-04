@@ -1,0 +1,82 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>Karan Mhatre | Flow Chat JS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
+  </head>
+
+  <body>
+    <!--[if IE]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    <header>
+      <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
+      <h2 class="article-heading"><b>Flow Chat JS</b></h2>
+      <p>A Javascript plugin to help developers build simple conversational chat flow. </p>
+      <p>This plugin allows you to input a JSON file and build a conversational chat flow. Each option the user select leads them to the next message. Each user can have their own journey.</p>
+    </header>
+
+    <div class="container">
+
+      <div class="flowchat-container" id="flowchat"></div>
+      <p>Some of the usecases for this are:</p>
+      <ul>
+        <li>- Storytelling</li>
+        <li>- FAQs and Support</li>
+        <li>- Games</li>
+        <li>- Teaching</li>
+      </ul>
+      <p>Find the complete documentation for usage at <a href="https://github.com/karanmhatre1/flow-chat-js" target="_blank">FlowChat JS on Github</a>.</p>
+      <hr>
+    </div>
+
+    <div class="container last-container">
+      <ul class="social-links">
+        <li>
+          <a href="https://www.instagram.com/onesquarekaran/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/karanmhatre1" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+        <li>
+          <a href="https://medium.com/@me_12358" target="_blank"><i class="fab fa-medium"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/karanmhatre/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="https://www.behance.net/karanmhatre/" target="_blank"><i class="fab fa-behance"></i></a>
+        </li>
+        <li>
+          <a href="mailto:me@karanmhatre.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b65469a39a.js" crossorigin="anonymous"></script>
+    <script src="flowchat-js/src/flowchat.js"></script>
+    <script>
+      $(function() {
+        $.getJSON( "flowchat-js/demo-data/data.json", function( dataJSON ) {
+          $('#flowchat').flowchat({
+            data: dataJSON,
+            startMessageId: 2,
+            delay: 2000
+          });
+        });
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
