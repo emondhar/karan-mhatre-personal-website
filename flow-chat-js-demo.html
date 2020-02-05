@@ -87,8 +87,6 @@
 
       $(function() {
 
-        $('.img-section').scrollLeft($('.img-section').width() / 2);
-
         $.getJSON( "flowchat-js/demo-data/data.json", function( dataJSON ) {
 
           $('#fc-container-1').flowchat({
@@ -128,6 +126,8 @@
             // startButtonId: "#startButton2",
             delay: 1500
           });
+
+          $('.img-section').scrollLeft(200);
 
         });
 
