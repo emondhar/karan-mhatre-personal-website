@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
 
     <link rel="manifest" href="site.webmanifest">
-    <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
+    <link rel="stylesheet" href="main.css">
   </head>
 
   <body>
@@ -21,14 +21,30 @@
 
     <header>
       <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
-      <h2 class="article-heading"><b>Flow Chat JS</b></h2>
+      <h3>Flow Chat JS</h3>
       <p>A Javascript plugin to help developers build simple conversational chat flow. </p>
       <p>This plugin allows you to input a JSON file and build a conversational chat flow. Each option the user select leads them to the next message. Each user can have their own journey.</p>
     </header>
 
     <div class="container">
-
-      <div class="flowchat-container" id="flowchat"></div>
+      <div class="flowchat-container" id="fc-container-1"></div>
+      <hr>
+      <h3>Playground</h3>
+      <p>Below is a simple example along with the JSON for you to play around with. Change the JSON, click Refresh and see the magic.</p>
+      <ul class="img-section">
+        <li>
+          <div class="json-container">
+            <a href="javascript:void(0);" class="startButton" id="resetButton">Reset JSON</a>
+            <a href="javascript:void(0);" class="startButton" id="applyButton">Apply</a>
+            <pre id="json-display"></pre>
+          </div>
+        </li>
+        <li>
+          <div class="flowchat-container" id="fc-container-2"></div>
+        </li>
+      </ul>
+      <hr>
+      <h3>Use Cases</h3>
       <p>Some of the usecases for this are:</p>
       <ul>
         <li>- Storytelling</li>
@@ -66,15 +82,73 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b65469a39a.js" crossorigin="anonymous"></script>
     <script src="flowchat-js/src/flowchat.js"></script>
+    <script type="text/javascript" src="flowchat-js/json-editor/dist/jquery.json-editor.min.js"></script>
     <script>
+
       $(function() {
+
+        $('.img-section').scrollLeft($('.img-section').width() / 2);
+
         $.getJSON( "flowchat-js/demo-data/data.json", function( dataJSON ) {
-          $('#flowchat').flowchat({
-            data: dataJSON,
+
+          $('#fc-container-1').flowchat({
+            dataJSON: dataJSON,
             startMessageId: 2,
-            delay: 2000
+            autoStart: true,
+            // startButtonId: "#startButton1",
+            delay: 1500
           });
         });
+
+        $.getJSON( "flowchat-js/demo-data/simple-data.json", function( dataJSON2 ) {
+
+          $('#fc-container-2').flowchat({
+            dataJSON: dataJSON2,
+            startMessageId: 1,
+            autoStart: true,
+            // startButtonId: "#startButton2",
+            delay: 1500
+          });
+
+          var editor = new JsonEditor('#json-display', dataJSON2);
+        });
+
+        $('#applyButton').click(function() {
+          html = $('#json-display').html();
+          str = html.replace(/(<([^>]+)>)/ig,"");
+
+          var obj = JSON.parse(str);
+
+          $( "#fc-container-2 .options li").off("click",  "**");
+
+          $('#fc-container-2').flowchat({
+            dataJSON: obj,
+            startMessageId: 1,
+            autoStart: true,
+            // startButtonId: "#startButton2",
+            delay: 1500
+          });
+
+        });
+
+        $('#resetButton').click(function() {
+
+          $.getJSON( "flowchat-js/demo-data/simple-data.json", function( dataJSON2 ) {
+
+            $('#fc-container-2').flowchat({
+              dataJSON: dataJSON2,
+              startMessageId: 1,
+              autoStart: true,
+              // startButtonId: "#startButton2",
+              delay: 1500
+            });
+
+            var editor = new JsonEditor('#json-display', dataJSON2);
+          });
+
+        });
+
+
       });
     </script>
     <script src="main.js"></script>

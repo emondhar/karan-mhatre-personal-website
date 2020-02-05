@@ -14,6 +14,8 @@ body {
   color: #333;
   font-size: 16px;
   background-color: #F3F3F2;
+  margin: 0;
+  padding: 0;
 }
 
 hr {
@@ -91,13 +93,22 @@ header h2.article-heading {
 }
 
 .container h3 {
-  font-size: 16px;
   text-transform: lowercase;
   font-family: 'Montserrat', sans-serif;
   color: #333;
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
+}
+
+header h3 {
+  text-transform: lowercase;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 .link-list a {
@@ -144,17 +155,17 @@ ul.img-section {
 ul.img-section::-webkit-scrollbar {
   display: none; }
 
-ul.img-section li {
+ul.img-section>li {
   list-style: none;
-  display: inline;
+  display: inline-block;
   margin-right: 10px;
 }
 
-.img-section li img{
+.img-section>li img{
   height: 400px;
 }
 
-.img-section li {
+.img-section>li {
   display: inline;
 }
 
@@ -199,7 +210,81 @@ a.github-button i {
   margin-right: 5px;
 }
 
+#json-display {
+  width: 250px;
+  box-sizing: border-box;
+  height: 400px;
+  margin-top: 0px;
+  overflow-y: scroll;
+  margin-bottom: 0px;
+}
+
+a.startButton {
+  display: inline-block;
+  padding: 8px 0px;
+  border-radius: 50px;
+  width: 50%;
+  border: 2px solid #ff7c02;
+  margin-bottom: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.flowchat-container {
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+#fc-container-2 {
+  margin-bottom: 0;
+}
+
+#fc-container-2 ul.chat-window {
+  height: 450px;
+  width: 250px;
+}
+
+ul.chat-window>li {
+  white-space: pre-wrap;
+}
+
+ul.chat-window>li.options>ul>li {
+  margin-bottom: 10px;
+}
+
+.json-editor-blackbord {
+  border-radius: 20px;
+  padding: 20px;
+}
+
 @media (min-width: 600px) {
+
+  ul.img-section {
+    overflow: visible;
+  }
+
+  ul.img-section {
+    position: relative;
+    left: -170px;
+  }
+
+  #json-display {
+    width: 500px;
+    height: 400px;
+  }
+
+  #fc-container-2 {
+    margin-left: 25px;
+  }
+
+  #fc-container-2 ul.chat-window {
+    height: 450px;
+    width: 400px;
+  }
+
   .container, header {
     width: 600px;
     margin: auto;

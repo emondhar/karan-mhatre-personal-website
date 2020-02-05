@@ -1,3 +1,4 @@
+"use strict";
 (function( $ ) {
 
   $.fn.flowchat = function( options ) {
@@ -9,41 +10,36 @@
       startButtonId: '#startButton',
       autoStart: true,
       startMessageId: 1,
-      data: null
+      dataJSON: null
     }, options );
 
-    var container = $(this)
+    var container = $(this);
 
     $(function() {
       if(settings.autoStart)
-        startChat(container, settings.data, settings.startMessageId, settings.delay)
-    });
-
-    $(document).on('click', '.options li', function() {
-
-      // clear the options when one option is selected by the user
-      $(this).parent().hide();
-
-      // insert user chat
-      userReply = '<li class="user"><div class="text">'+ $(this).html() +'</div></li>';
-      container.children('.chat-window').append(userReply);
-
-      // get the next message
-      messages = settings.data;
-      nextMessageId = $(this).attr('data-nextId');
-      nextMessage = findMessageInJsonById(messages, nextMessageId);
-
-      // add next message
-      generateMessageHTML(messages, nextMessage, settings.delay);
-
+        startChat(container, settings.dataJSON, settings.startMessageId, settings.delay)
     });
 
     // on click of Start button
     $(document).on('click', settings.startButtonId, function() {
 
-      startChat(container, settings.data, settings.startMessageId, settings.delay)
+      startChat(container, settings.dataJSON, settings.startMessageId, settings.delay)
 
     });
+  }
+
+  function selectOption($this, container, data, delay) {
+    console.log("here");
+    $this.parent().hide();
+    var $userReply = $('<li class="user"><div class="text">'+ $this.html() +'</div></li>');
+    container.children('.chat-window').append($userReply);
+
+    // get the next message
+    var nextMessageId = $this.attr('data-nextId');
+    var nextMessage = findMessageInJsonById(data, nextMessageId);
+
+    // // add next message
+    generateMessageHTML(container, data, nextMessage, delay);
   }
 
   function startChat(container, data, startId, delay) {
@@ -52,72 +48,85 @@
     container.append("<ul class='chat-window'></ul>");
 
     // get the first message
-    message = findMessageInJsonById(data, startId);
+    var message = findMessageInJsonById(data, startId);
 
     // add message
-    generateMessageHTML(data, message, delay);
+    generateMessageHTML(container, data, message, delay);
   }
 
   function findMessageInJsonById(data, id) {
 
     var messages = data;
 
-    for (i = 0; messages.length > i; i ++)
+    for (var i = 0; messages.length > i; i ++)
       if (messages[i].id == id)
         return messages[i];
 
   }
 
-  function addOptions(m) {
+  function addOptions(container, data, delay, m) {
 
-    template = '<li class="options"><ul>'
+    var $optionsContainer = $('<li class="options"></li>');
 
-    for (i=1;i<6;i++){
+    var $optionsList = $('<ul></ul>');
+
+    var optionText = null;
+
+    var optionMessageId = null;
+
+    for (var i=1;i<6;i++) {
       optionText = m["option"+i]
       optionMessageId = m["option"+i+"_nextMessageId"]
 
-      if (optionText != "") // add option only if text exists
-        template = template + "<li data-nextId=" + optionMessageId + ">" + optionText + "</li>"
+      if (optionText != "" && optionText != undefined && optionText != null) {// add option only if text exists
+        var $optionElem = $("<li data-nextId=" + optionMessageId + ">" + optionText + "</li>");
+
+        $optionElem.click(function() {
+          selectOption($(this), container, data, delay)
+        });
+
+        $optionsList.append($optionElem);
+      }
     }
 
-    template = template + '</ul></li>';
+    $optionsContainer.append($optionsList);
 
-    return template;
+    return $optionsContainer;
   }
 
-  function toggleLoader(status) {
+  function toggleLoader(status, container) {
     if(status=="show")
-      $('.chat-window').append("<li class='typing-indicator'><span></span><span></span><span></span></li>");
+      container.children('.chat-window').append("<li class='typing-indicator'><span></span><span></span><span></span></li>");
     else
-      $('.typing-indicator').remove();
+      container.find('.typing-indicator').remove();
   }
 
-  function generateMessageHTML(messages, m, delay) {
+  function generateMessageHTML(container, messages, m, delay) {
 
     // create template
-    template = '<li class="bot"><div class="text">'+ m.text +'</div></li>';
+    var $template = $('<li class="bot"><div class="text">'+ m.text +'</div></li>');
 
-    // if the message is a question then add options
-    if (m.messageType == "Question")
-      template = template + addOptions(m);
+    toggleLoader("show", container);
 
-    toggleLoader("show");
-
-    $(".chat-window").scrollTop($(".chat-window").prop('scrollHeight'));
+    container.children(".chat-window").scrollTop($(".chat-window").prop('scrollHeight'));
 
     // add delay to chat message
     setTimeout(function() {
 
-      toggleLoader("hide");
-      $('.chat-window').append(template);
+      toggleLoader("hide", container);
 
-      $(".chat-window").scrollTop($(".chat-window").prop('scrollHeight'));
+      container.children('.chat-window').append($template);
+
+      // if the message is a question then add options
+      if (m.messageType == "Question")
+        container.children('.chat-window').append(addOptions(container, messages, delay, m));
+
+      container.children(".chat-window").scrollTop($(".chat-window").prop('scrollHeight'));
 
       // call recursively if nextMessageId exists
       if (m.nextMessageId != "") {
-        console.log(m.nextMessageId);
-        nextMessage = findMessageInJsonById(messages, m.nextMessageId)
-        generateMessageHTML(messages, nextMessage, delay)
+        var nextMessage = findMessageInJsonById(messages, m.nextMessageId)
+        generateMessageHTML(container, messages, nextMessage, delay)
       }
 
     }, delay);
