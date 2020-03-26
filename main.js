@@ -22,7 +22,7 @@ $(function() {
 
             console.log(e);
             
-            template = $('<li><a href="' + e.fields.link + '" class="block-link"><h4>' + e.fields.title + '</h4><span>View ⟶</span></a></li>');
+            template = $('<li><a href="' + e.fields.link + '" target="_blank" class="block-link"><h4>' + e.fields.title + '</h4><span>View ⟶</span></a></li>');
             $('#labs').append(template);
 
 
