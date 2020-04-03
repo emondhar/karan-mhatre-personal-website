@@ -1,5 +1,5 @@
-
-$(function() {
+// 
+// $(function() {
 // 
 //     const client = contentful.createClient({
 //       // This is the space ID. A space is like a project folder in Contentful terms
@@ -28,5 +28,5 @@ $(function() {
 // 
 //         });
 //       })
-
-});
+// 
+// });
