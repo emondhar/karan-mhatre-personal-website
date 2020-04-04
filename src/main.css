@@ -74,6 +74,14 @@ header {
   padding: 40px 20px 0px 20px;
 }
 
+.desktop-only {
+  display: none !important;
+}
+
+.mobile-only {
+  display: inline !important;
+}
+
 header h1 {
   text-transform: lowercase;
   font-family: 'Montserrat', sans-serif;
@@ -84,9 +92,10 @@ header h1 {
 }
 
 h2 {
-  font-size: 16px;
-  color: #333;
-  font-weight: 400;
+  font-size: 24px;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
 
 h2.article-heading {
@@ -455,6 +464,14 @@ h2 span.pink-heading-bg.show {
     width: 20px;
     text-indent: 0px;
     margin-right: 4px;
+  }
+
+  .desktop-only {
+    display: inline !important;
+  }
+
+  .mobile-only {
+    display: none !important;
   }
 
 }
