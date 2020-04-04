@@ -3,64 +3,69 @@
   <head>
     <title>Karan Mhatre | Flow Chat JS</title>
     <meta name="description" content="A Javascript plugin to help developers build simple conversational chat flow.">
-    <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
     <head>
       <meta charset="utf-8">
 
       <link rel="icon" type="image/png" href="img/favicon.png" />
+
+      <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
 
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
 
       <meta name="author" content="Karan Mhatre">
       <meta name="theme-color" content="#FF7C02" />
+
       <link rel="stylesheet" href="main.css">
     </head>
   </head>
 
-  <body>
+  <body data-barba="wrapper">
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
 
-    <header>
-      <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
-      <h3>Flow Chat JS</h3>
-      <p>A Javascript plugin to help developers build simple conversational chat flow. </p>
-      <p>This plugin allows you to input a JSON file and build a conversational chat flow. Each option the user select leads them to the next message. Each user can have their own journey.</p>
-    </header>
+    <main data-barba="container" data-barba-namespace="flow-chat-js">
 
-    <div class="container">
-      <div class="flowchat-container" id="fc-container-1"></div>
-      <hr>
-      <h3>Playground</h3>
-      <p>Below is a simple example along with the JSON for you to play around with. Change the JSON, click Refresh and see the magic.</p>
-      <ul class="img-section">
-        <li>
-          <div class="json-container">
-            <a href="javascript:void(0);" class="startButton" id="resetButton">Reset JSON</a>
-            <a href="javascript:void(0);" class="startButton" id="applyButton">Apply</a>
-            <pre id="json-display"></pre>
-          </div>
-        </li>
-        <li>
-          <div class="flowchat-container" id="fc-container-2"></div>
-        </li>
-      </ul>
-      <hr>
-      <h3>Use Cases</h3>
-      <p>Some of the usecases for this are:</p>
-      <ul>
-        <li>- Storytelling</li>
-        <li>- FAQs and Support</li>
-        <li>- Games</li>
-        <li>- Teaching</li>
-      </ul>
-      <p>Find the complete documentation for usage at <a href="https://github.com/karanmhatre1/flow-chat-js" target="_blank">FlowChat JS on Github</a>.</p>
-      <hr>
-    </div>
+      <header>
+        <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
+        <h3>Flow Chat JS</h3>
+        <p>A Javascript plugin to help developers build simple conversational chat flow. </p>
+        <p>This plugin allows you to input a JSON file and build a conversational chat flow. Each option the user select leads them to the next message. Each user can have their own journey.</p>
+      </header>
+
+      <div class="container">
+        <div class="flowchat-container" id="fc-container-1"></div>
+        <hr>
+        <h3>Playground</h3>
+        <p>Below is a simple example along with the JSON for you to play around with. Change the JSON, click Refresh and see the magic.</p>
+        <ul class="img-section">
+          <li>
+            <div class="json-container">
+              <a href="javascript:void(0);" class="startButton" id="resetButton">Reset JSON</a>
+              <a href="javascript:void(0);" class="startButton" id="applyButton">Apply</a>
+              <pre id="json-display"></pre>
+            </div>
+          </li>
+          <li>
+            <div class="flowchat-container" id="fc-container-2"></div>
+          </li>
+        </ul>
+        <hr>
+        <h3>Use Cases</h3>
+        <p>Some of the usecases for this are:</p>
+        <ul>
+          <li>- Storytelling</li>
+          <li>- FAQs and Support</li>
+          <li>- Games</li>
+          <li>- Teaching</li>
+        </ul>
+        <p>Find the complete documentation for usage at <a href="https://github.com/karanmhatre1/flow-chat-js" target="_blank">FlowChat JS on Github</a>.</p>
+        <hr>
+      </div>
+    </main>
     
     <div class="container last-container">
       <ul class="social-links">
@@ -84,7 +89,7 @@
         </li>
       </ul>
     </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
     <script src="https://kit.fontawesome.com/b65469a39a.js" crossorigin="anonymous"></script>
@@ -92,12 +97,16 @@
     <script src="https://unpkg.com/@barba/core"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
 
+    <script src="flowchat-js/json-editor/dist/jquery.json-editor.min.js"></script>
+    <script src="flowchat-js/src/flowchat.js"></script>
+    <script src="src/flowchat-demo.js"></script>
+
     <script src="src/main.js"></script>
+
     <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
         heap.load("844080648");
     </script>
 
-    <script src="src/flowchat-demo.js"></script>
   </body>
 </html>

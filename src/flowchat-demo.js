@@ -1,4 +1,6 @@
-$(function() {
+function loadFCDemo() {
+
+  console.log('inside loadFCDemo()');
 
   $.getJSON( "flowchat-js/demo-data/data.json", function( dataJSON ) {
 
@@ -60,6 +62,8 @@ $(function() {
     });
 
   });
+}
 
-
+$(function() {
+  loadFCDemo();
 });

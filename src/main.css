@@ -43,11 +43,27 @@ h1 a {
 }
 
 a.block-link {
+  position: relative;
+  display: block;
   color: #333;
 }
 
 a.block-link span {
   color: #FF7C02;
+}
+
+a.block-link span > span {
+  text-indent: -20px;
+  -webkit-transition: .3s ease-in;
+  -o-transition: .3s ease-in;
+  transition: .15s ease-in;
+  display: inline-block;
+  overflow: hidden;
+  height: 18px;
+}
+
+a.block-link:hover span > span {
+  text-indent: 5px;
 }
 
 /* Global end */
@@ -329,6 +345,55 @@ ul.chat-window>li.options>ul>li {
 
   .img-section img.review-image {
     width: 420px;
+  }
+
+  a.block-link:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0px;
+    left: -22px;
+    background-color: #ffcdce;
+    display: block;
+    -webkit-transition: 0.1s 0.15s ease-in;
+    -o-transition: 0.1s 0.15s ease-in;
+    transition: 0.1s 0.15s ease-in;
+  }
+
+  a.block-link:hover:before {
+    width: 8px;
+  }
+
+  h1 {
+    text-indent: -9px;
+    -webkit-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+  }
+
+  span.back-button {
+    display: inline-block;
+    width:0px;
+    text-indent: 20px;
+    overflow: hidden;
+    top: 2px;
+    margin: 0px;
+    -webkit-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+  }
+
+  h1:hover {
+    text-indent: 0px;
+  }
+
+  h1:hover a {
+    color: #FF7C02;
+  }
+
+  h1:hover span.back-button{
+    width: 20px;
+    text-indent: 0px;
   }
 
 }

@@ -9,63 +9,70 @@
 
       <link rel="icon" type="image/png" href="img/favicon.png" />
 
+      <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
 
       <meta name="author" content="Karan Mhatre">
       <meta name="theme-color" content="#FF7C02" />
+
       <link rel="stylesheet" href="main.css">
     </head>
   </head>
 
-  <body>
+  <body data-barba="wrapper">
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
 
-    <header>
-      <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
-      <h3>Catan (Colonist.io) Dice History Chrome Extension</h3>
-      <p>Helps players see dice history while while catan online</p>
-    </header>
+    <main data-barba="container" data-barba-namespace="catan-colonist-extension">
 
-    <div class="container">
-      <div class="flowchat-container" id="fc-container-1"></div>
-      <hr>
-      <h3>Has this ever happended to you?</h3>
-      <p>You're playing Catan online on <a href="http://www.colonist.io" target="_blank">colonist.io</a> and you feel like it just isn't your lucky day. Six just isn't rolling this game. This game is bugged.</p>
-      <p>Now you can install this chrome extension and know for sure.</p>
-      <img src="img/colonist-extension-screenshot.png" alt="Colonist Dice History Extension" width="100%">
-      <hr>
-      <h3>Where do I find it</h3>
-      <p>The extension is still under review for the Chrome Web Extension Store. Till then install it from <a href="https://github.com/karanmhatre1/colonist-dice-extension" target="_blank">Github page</a>.</p>
-      <hr>
-    </div>
+      <header>
+        <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
+        <h3>Catan (Colonist.io) Dice History Chrome Extension</h3>
+        <p>Helps players see dice history while while catan online</p>
+      </header>
 
-    <div class="container last-container">
-      <ul class="social-links">
-        <li>
-          <a href="https://www.instagram.com/onesquarekaran/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </li>
-        <li>
-          <a href="https://github.com/karanmhatre1" target="_blank"><i class="fab fa-github"></i></a>
-        </li>
-        <li>
-          <a href="https://medium.com/@me_12358" target="_blank"><i class="fab fa-medium"></i></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/karanmhatre/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </li>
-        <li>
-          <a href="https://www.behance.net/karanmhatre/" target="_blank"><i class="fab fa-behance"></i></a>
-        </li>
-        <li>
-          <a href="mailto:me@karanmhatre.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        </li>
-      </ul>
-    </div>
+      <div class="container">
+        <div class="flowchat-container" id="fc-container-1"></div>
+        <hr>
+        <h3>Has this ever happended to you?</h3>
+        <p>You're playing Catan online on <a href="http://www.colonist.io" target="_blank">colonist.io</a> and you feel like it just isn't your lucky day. Six just isn't rolling this game. This game is bugged.</p>
+        <p>Now you can install this chrome extension and know for sure.</p>
+        <img src="img/colonist-extension-screenshot.png" alt="Colonist Dice History Extension" width="100%">
+        <hr>
+        <h3>Where do I find it</h3>
+        <p>The extension is still under review for the Chrome Web Extension Store. Till then install it from <a href="https://github.com/karanmhatre1/colonist-dice-extension" target="_blank">Github page</a>.</p>
+        <hr>
+      </div>
+    </main>
+
+      <div class="container last-container">
+        <ul class="social-links">
+          <li>
+            <a href="https://www.instagram.com/onesquarekaran/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/karanmhatre1" target="_blank"><i class="fab fa-github"></i></a>
+          </li>
+          <li>
+            <a href="https://medium.com/@me_12358" target="_blank"><i class="fab fa-medium"></i></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/karanmhatre/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="https://www.behance.net/karanmhatre/" target="_blank"><i class="fab fa-behance"></i></a>
+          </li>
+          <li>
+            <a href="mailto:me@karanmhatre.com" target="_blank"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
@@ -74,7 +81,12 @@
     <script src="https://unpkg.com/@barba/core"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
 
+    <script src="flowchat-js/json-editor/dist/jquery.json-editor.min.js"></script>
+    <script src="flowchat-js/src/flowchat.js"></script>
+    <script src="src/flowchat-demo.js"></script>
+
     <script src="src/main.js"></script>
+
     <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
         heap.load("844080648");

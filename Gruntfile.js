@@ -41,25 +41,20 @@ module.exports = function(grunt) {
         }
       }
     },
-    uglify: { 
-        options: { 
-            compress: true 
-        }, 
-        applib: { 
-            src: [ 
-            'src/main.js', 
-            ], 
-            dest: 'main.js' 
-        } 
-    } 
+    watch: {
+      bake: {
+          files: [ "app/**" ],
+          tasks: "bake"
+      }
+    }
 
   });
 
-  grunt.loadNpmTasks('uglifyjs-webpack-plugin');
   grunt.loadNpmTasks( "grunt-bake" );
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask("default", ["bake", "cssmin", "uglify"]);
+  grunt.registerTask("default", ["bake", "cssmin"]);
 
 };

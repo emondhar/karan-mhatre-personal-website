@@ -9,11 +9,14 @@
 
       <link rel="icon" type="image/png" href="img/favicon.png" />
 
+      <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
 
       <meta name="author" content="Karan Mhatre">
       <meta name="theme-color" content="#FF7C02" />
+
       <link rel="stylesheet" href="main.css">
     </head>
   </head>
@@ -25,18 +28,18 @@
 
     <!-- Add your site or application content here -->
 
-    <main data-barba="container" data-barba-namespace="home">
+    <main data-barba="container" data-barba-namespace="work-1">
 
       <header>
-        <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
+        <h1><a href="index.html"><span class="back-button">⟵</span>Karan Mhatre</a></h1>
         <h2 class="article-heading">Launched a zero to one live streaming platform for GOQii and grew it to a significant MAU base.</h2>
       </header>
 
       <div class="container">
         <ul class="img-section">
-          <li><img src="img/work-1-img-1.png" alt=""></li>
-          <li><img src="img/work-1-img-2.png" alt=""></li>
-          <li><img src="img/work-1-img-3.png" alt=""></li>
+          <li><img src="img/work-1-img-1.png" alt="screenshot-1"></li>
+          <li><img src="img/work-1-img-2.png" alt="screenshot-2"></li>
+          <li><img src="img/work-1-img-3.png" alt="screenshot-3"></li>
         </ul>
         <h5>Opportunity</h5>
         <p>Video consumption is a rising trend online and we wanted to leverage this to provide better health services to our customers.</p>
@@ -55,8 +58,8 @@
         <p>Designing a notification strategy to perfectly balance engagement and uninstalls</p>
         <p>Working with the creative team to onboard new coaches and help with the initial scripts, etc.</p>
         <h5>Media Coverage</h5>
-        <p><a href="https://entrackr.com/2019/03/goqii-play-ott-funding/" class="block-link">GOQii launches OTT platform GOQii Play; secures $1 Mn fresh fund from US entity.<br><span>Read article ⟶</span></a></p>
-        <p><a href="https://indiantelevision.com/iworld/over-the-top-services/goqii-play-india-s-first-healthcare-ott-platform-partners-with-190507" class="block-link">GOQii Play - India’s first healthcare OTT platform partners with PayTM<br> <span>Read article ⟶</span></a></p>
+        <p><a href="https://entrackr.com/2019/03/goqii-play-ott-funding/" class="block-link">GOQii launches OTT platform GOQii Play; secures $1 Mn fresh fund from US entity.<br><span>Read article <span>⟶</span></span></a></p>
+        <p><a href="https://indiantelevision.com/iworld/over-the-top-services/goqii-play-india-s-first-healthcare-ott-platform-partners-with-190507" class="block-link">GOQii Play - India’s first healthcare OTT platform partners with PayTM<br> <span>Read article <span>⟶</span></span></a></p>
         <h5>Impact</h5>
         <p>Increase in Monthly active users on the platform.</p>
         <p>Improved stickiness on the platform.</p>
@@ -100,7 +103,12 @@
     <script src="https://unpkg.com/@barba/core"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
 
+    <script src="flowchat-js/json-editor/dist/jquery.json-editor.min.js"></script>
+    <script src="flowchat-js/src/flowchat.js"></script>
+    <script src="src/flowchat-demo.js"></script>
+
     <script src="src/main.js"></script>
+
     <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
         heap.load("844080648");

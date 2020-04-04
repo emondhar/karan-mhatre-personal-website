@@ -32,6 +32,9 @@ $(function() {
 
   function contentAnimation() {
 
+    loadFCDemo();
+    console.log('here');
+
     var tl = gsap.timeline();
     tl.from('.is-animated', { duration: .5, translateY: 10, opacity: 0, stagger: 0.4 });
     tl.from('.main-navigation', { duration: .5, translateY: -10, opacity: 0});
@@ -63,6 +66,7 @@ $(function() {
       },
 
       enter(data) {
+
         contentAnimation();
       },
 
