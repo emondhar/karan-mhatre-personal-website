@@ -1,15 +1,21 @@
 <!doctype html>
 <html class="no-js" lang="">
   <head>
-    <meta charset="utf-8">
     <title>Karan Mhatre | Flow Chat JS</title>
     <meta name="description" content="A Javascript plugin to help developers build simple conversational chat flow.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
-
-    <link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
-    <link rel="stylesheet" href="main.css">
+    <head>
+      <meta charset="utf-8">
+
+      <link rel="icon" type="image/png" href="img/favicon.png" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
+
+      <meta name="author" content="Karan Mhatre">
+      <meta name="theme-color" content="#FF7C02" />
+      <link rel="stylesheet" href="main.css">
+    </head>
   </head>
 
   <body>
@@ -55,7 +61,7 @@
       <p>Find the complete documentation for usage at <a href="https://github.com/karanmhatre1/flow-chat-js" target="_blank">FlowChat JS on Github</a>.</p>
       <hr>
     </div>
-
+    
     <div class="container last-container">
       <ul class="social-links">
         <li>
@@ -80,77 +86,18 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
     <script src="https://kit.fontawesome.com/b65469a39a.js" crossorigin="anonymous"></script>
-    <script src="flowchat-js/src/flowchat.js"></script>
-    <script type="text/javascript" src="flowchat-js/json-editor/dist/jquery.json-editor.min.js"></script>
-    <script>
 
-      $(function() {
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
 
-        $.getJSON( "flowchat-js/demo-data/data.json", function( dataJSON ) {
-
-          $('#fc-container-1').flowchat({
-            dataJSON: dataJSON,
-            startMessageId: 2,
-            autoStart: true,
-            // startButtonId: "#startButton1",
-            delay: 1500
-          });
-        });
-
-        $.getJSON( "flowchat-js/demo-data/simple-data.json", function( dataJSON2 ) {
-
-          $('#fc-container-2').flowchat({
-            dataJSON: dataJSON2,
-            startMessageId: 1,
-            autoStart: true,
-            // startButtonId: "#startButton2",
-            delay: 1500
-          });
-
-          var editor = new JsonEditor('#json-display', dataJSON2);
-        });
-
-        $('#applyButton').click(function() {
-          html = $('#json-display').html();
-          str = html.replace(/(<([^>]+)>)/ig,"");
-
-          var obj = JSON.parse(str);
-
-          $( "#fc-container-2 .options li").off("click",  "**");
-
-          $('#fc-container-2').flowchat({
-            dataJSON: obj,
-            startMessageId: 1,
-            autoStart: true,
-            // startButtonId: "#startButton2",
-            delay: 1500
-          });
-
-          $('.img-section').scrollLeft(200);
-
-        });
-
-        $('#resetButton').click(function() {
-
-          $.getJSON( "flowchat-js/demo-data/simple-data.json", function( dataJSON2 ) {
-
-            $('#fc-container-2').flowchat({
-              dataJSON: dataJSON2,
-              startMessageId: 1,
-              autoStart: true,
-              // startButtonId: "#startButton2",
-              delay: 1500
-            });
-
-            var editor = new JsonEditor('#json-display', dataJSON2);
-          });
-
-        });
-
-
-      });
+    <script src="src/main.js"></script>
+    <script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
+        heap.load("844080648");
     </script>
-    <script src="main.js"></script>
+
+    <script src="src/flowchat-demo.js"></script>
   </body>
 </html>
