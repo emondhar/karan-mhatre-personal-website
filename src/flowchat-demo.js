@@ -63,7 +63,3 @@ function loadFCDemo() {
 
   });
 }
-
-$(function() {
-  loadFCDemo();
-});

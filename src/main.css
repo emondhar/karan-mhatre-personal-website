@@ -86,20 +86,16 @@ header h1 {
   text-transform: lowercase;
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
-  margin-bottom: 20px;
+  display: inline-block;
   font-weight: 500;
   color: #333;
 }
 
 h2 {
   font-size: 24px;
-    color: #333;
-    font-weight: 400;
-    margin-bottom: 20px;
-}
-
-h2.article-heading {
-  font-size: 18px;
+  color: #333;
+  font-weight: 400;
+  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -169,7 +165,8 @@ span.back-button {
 }
 
 ul.img-section {
-  margin: 40px 0;
+  padding: 0px 20px;
+  margin: 40px 0px;
   white-space: nowrap; /* [1] */
   overflow-x: auto; /* [2] */
   -webkit-overflow-scrolling: touch; /* [3] */
@@ -188,10 +185,10 @@ ul.img-section>li {
 
 .img-section>li img{
   height: 400px;
-}
-
-.img-section>li {
-  display: inline;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  border-radius: 12px;
 }
 
 ul.social-links li {
@@ -236,9 +233,11 @@ a.github-button i {
 }
 
 #json-display {
-  width: 250px;
+  width: 100%;
+  overflow: hidden;
   box-sizing: border-box;
   height: 400px;
+  text-align: left;
   margin-top: 0px;
   overflow-y: scroll;
   margin-bottom: 0px;
@@ -267,11 +266,6 @@ a.startButton {
   margin-bottom: 0;
 }
 
-#fc-container-2 ul.chat-window {
-  height: 450px;
-  width: 250px;
-}
-
 ul.chat-window>li {
   white-space: pre-wrap;
 }
@@ -285,7 +279,6 @@ ul.chat-window>li.options>ul>li {
   padding: 20px;
 }
 
-
 .loading-screen {
   position: relative;
   padding-left: 0;
@@ -297,6 +290,7 @@ ul.chat-window>li.options>ul>li {
   transform: scaleY(0) skewX(0);
   transform-origin: top left;
 }
+
 .loading-screen.open {
   transform: scaleY(1);
   transform-origin: bottom left;
@@ -349,11 +343,12 @@ h2 span.pink-heading-bg.show {
 @media (min-width: 600px) {
 
   ul.img-section {
+    position: relative;
+    left: -10%;
     overflow: visible;
   }
 
-  ul.img-section {
-    position: relative;
+  ul.flowchat-editor {
     left: -170px;
   }
 
@@ -367,8 +362,8 @@ h2 span.pink-heading-bg.show {
   }
 
   #fc-container-2 ul.chat-window {
-    height: 450px;
     width: 400px;
+    height: 450px;
   }
 
   .container, header {
@@ -388,7 +383,6 @@ h2 span.pink-heading-bg.show {
   h2 {
     font-size: 32px;
     color: #333;
-    margin: 60px 0px;
     margin-bottom: 30px;
   }
 
