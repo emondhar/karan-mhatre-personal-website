@@ -43,8 +43,12 @@ module.exports = function(grunt) {
     },
     watch: {
       bake: {
-          files: [ "app/**" ],
+          files: [ "app/**"],
           tasks: "bake"
+      },
+      cssmin: {
+          files: [ "src/**" ],
+          tasks: "cssmin"
       }
     }
 
