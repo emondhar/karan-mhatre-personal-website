@@ -26,8 +26,8 @@ $(function() {
 
     var tl = gsap.timeline();
     tl.set('.loading-screen', { transformOrigin: "bottom left"});
-    tl.to('.loading-screen', { duration: .5, scaleY: 1});
-    tl.to('.loading-screen', { duration: .5, scaleY: 0, skewX: 0, transformOrigin: "top left", ease: "power1.out", delay: 1 });
+    tl.to('.loading-screen', { duration: .2, scaleY: 1});
+    tl.to('.loading-screen', { duration: .2, scaleY: 0, skewX: 0, transformOrigin: "top left", ease: "power1.out", delay: .2 });
   }
 
   function contentAnimation() {
@@ -42,7 +42,7 @@ $(function() {
           scrollTop: 0
         }, 0);
 
-    $('.green-heading-bg').addClass('show');
+    $('.pink-heading-bg').addClass('show');
 
   }
 
@@ -57,7 +57,7 @@ $(function() {
         
         loadingAnimation();
 
-        await delay(500);
+        await delay(200);
 
         const done = this.async();
         

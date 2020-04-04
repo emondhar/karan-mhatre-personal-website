@@ -307,6 +307,7 @@ ul.chat-window>li.options>ul>li {
     top: -110vh;
   }
 }
+
 .loading-container {
   position: fixed;
   top: 0;
@@ -317,6 +318,24 @@ ul.chat-window>li.options>ul>li {
   z-index: 10;
   pointer-events: none;
 }
+
+
+h2 span.pink-heading-bg {
+  display: inline;
+  z-index: -1;
+  background-image: linear-gradient(#FFCDCE, #FFCDCE);
+  background-position: 0 80%;
+  background-repeat: no-repeat;
+  background-size: 0 40%;
+  padding-left: 5px;
+  padding-right: 5px;
+  transition: background-size 1s .5s ease;
+}
+
+h2 span.pink-heading-bg.show {
+  background-size: 100% 40%;
+}
+
 
 @media (min-width: 600px) {
 
@@ -393,17 +412,19 @@ ul.chat-window>li.options>ul>li {
     content: "";
     position: absolute;
     height: 100%;
-    width: 0px;
+    width: 9px;
+    transform: scaleX(0);
     left: -22px;
     background-color: #ffcdce;
     display: block;
-    -webkit-transition: 0.1s 0.15s ease-in;
-    -o-transition: 0.1s 0.15s ease-in;
-    transition: 0.1s 0.15s ease-in;
+    transform-origin: top right;
+    -webkit-transition: 0.1s 0.2s ease-in;
+    -o-transition: 0.1s 0.2s ease-in;
+    transition: 0.1s 0.2s ease-in;
   }
 
   a.block-link:hover:before {
-    width: 8px;
+    transform: scaleX(1);
   }
 
   h1 {
