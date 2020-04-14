@@ -191,6 +191,12 @@ ul.img-section>li {
   border-radius: 12px;
 }
 
+ul.social-links {
+  border-top: 1px dashed #333;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
 ul.social-links li {
   display: inline-block;
   margin-right: 20px;
@@ -337,6 +343,17 @@ h2 span.pink-heading-bg {
 
 h2 span.pink-heading-bg.show {
   background-size: 100% 40%;
+}
+
+blockquote {
+  border-left: 10px solid #ddd;
+  margin: 0;
+  padding-left: 30px;
+}
+
+code {
+  background-color: #fff;
+  padding: 2px;
 }
 
 

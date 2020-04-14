@@ -2,8 +2,8 @@
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8">
-    <title>Karan Mhatre | Catan Colonist Dice History Extension</title>
-    <meta name="description" content="Helps players see dice history while while catan online">
+    <title>Karan Mhatre | Page transition example using Barba JS</title>
+    <meta name="description" content="Using Barba JS to perform page transitions without refresh">
     <head>
       <meta charset="utf-8">
 
@@ -32,21 +32,47 @@
       <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
     </header>
 
-    <main data-barba="container" data-barba-namespace="catan-colonist-extension">
+    <main data-barba="container" data-barba-namespace="barba-js-page-transitions">
 
       <div class="container">
-        <h2>Catan (Colonist.io) Dice History Chrome Extension</h2>
-        <p>Helps players see <span class="pink-heading-bg">dice history while playing</span> catan online</p>
+        <h2 class="article-heading">Perform seamless <span class="pink-heading-bg">page transitions without refresh</span> using barba.js.</h2>
       </div>
 
       <div class="container">
-        <h3>Has this ever happended to you?</h3>
-        <p>You're playing Catan online on <a href="http://www.colonist.io" target="_blank">colonist.io</a> and you feel like it just isn't your lucky day. Six just isn't rolling this game. This game is bugged.</p>
-        <p>Now you can install this chrome extension and know for sure.</p>
-        <img src="img/colonist-extension-screenshot.png" alt="Colonist Dice History Extension" width="100%">
+        <a href="http://karanmhatre.com/barba-page-transition-example/index.html" target="_blank">
+          <img src="img/barba-page-transition.gif" alt="Example showing page transition without refresh">
+        </a>
+        <blockquote>
+        <p>Create badass fluid and smooth transitions between your website’s pages. - <a href="https://barba.js.org">Barba JS</a></p>
+        </blockquote>
+        <p>You can find helpful documentation on their <a href="https://barba.js.org/docs/getstarted/intro/">website</a>.</p>
+        <p>This demo shows how to use Barba JS for page navigation.
+        <a href="http://karanmhatre.com/barba-page-transition-example/index.html" target="_blank">See the demo</a></p>
+        <p>I am using <a href="https://greensock.com/gsap/">GSAP</a> for basic animations on the page.</p>
+        <p>The sequence of the animation is</p>
+        <ol>
+          <li>Block the full screen with &quot;.loading-screen&quot;.</li>
+          <li>Remove &quot;.loading-screen&quot;.</li>
+          <li>Animate the new page content.</li>
+        </ol>
         <hr>
-        <h3>Where do I find it</h3>
-        <p>The extension is still under review for the Chrome Web Extension Store. Till then install it from <a href="https://github.com/karanmhatre1/colonist-dice-extension" target="_blank">Github page</a>.</p>
+        <h3 id="understanding-supporting-functions">Understanding Supporting Functions</h3>
+        <p>
+          <code>function loadingAnimation()</code> - This function shows and hides the &quot;.loading-screen&quot;, which is a fullpage screen used to transition between pages.</p>
+        <p>
+          <code>function contentAnimation()</code> - All the content on the page starts with <code>opacity: 0</code>. This function animates on all on screen elements into visibility.</p>
+        <hr>
+        <h3 id="barba-hooks">Barba Hooks</h3>
+        <script src="https://gist.github.com/karanmhatre1/554423a0cc02449a80bf2cc3dd13bd9e.js"></script>
+        <p>These are barba js hooks.</p>
+        <p><b>once</b> is called the first time the page is loaded. This time we want to simply animate all the content in place.</p>
+        <p><b>leave</b> is called when you move out of one page to another. While moving out of the page, we want to call <code>loadingAnimation()</code>, wait 1s, and then pass control to the next hook .i.e. &quot;Enter&quot;.</p>
+        <p><b>enter</b> is called when you enter a new page. As soon as we enter the page, we want to call <code>contentAnimate</code> to show all the elements on this page.</p>
+
+        <hr>
+
+        <p>Find the complete documentation for usage at <a href="https://github.com/karanmhatre1/barba-page-transition-example" target="_blank">FlowChat JS on Github</a>.</p>
+        
       </div>
     </main>
 

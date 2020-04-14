@@ -22,6 +22,7 @@ module.exports = function(grunt) {
                 "index.html": "app/index.html",
                 "catan-colonist-extension.html": "app/catan-colonist-extension.html",
                 "flow-chat-js-demo.html": "app/flow-chat-js-demo.html",
+                "barba-js-page-transitions-without-refresh.html" : "app/barba-js-page-transitions-without-refresh.html",
                 "work-1.html": "app/work-1.html",
                 "work-2.html": "app/work-2.html",
                 "work-3.html": "app/work-3.html",
