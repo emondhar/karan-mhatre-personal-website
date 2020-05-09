@@ -26,6 +26,7 @@ module.exports = function(grunt) {
                 "work-1.html": "app/work-1.html",
                 "work-2.html": "app/work-2.html",
                 "work-3.html": "app/work-3.html",
+                "work-4.html": "app/work-4.html",
                 // etc ...
             }
         },

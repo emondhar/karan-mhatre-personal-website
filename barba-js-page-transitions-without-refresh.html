@@ -12,7 +12,7 @@
       <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
 
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700|Lora:400,700&display=swap" rel="stylesheet">
 
       <meta name="author" content="Karan Mhatre">
       <meta name="theme-color" content="#FF7C02" />
@@ -28,20 +28,29 @@
 
     <!-- Add your site or application content here -->
 
+
+    <div class="loading-container">
+      <div class="loading-screen">
+      </div>
+    </div>
+
+
     <header>
-      <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
+      <h1><a href="index.html">Karan Mhatre</a></h1>
     </header>
 
     <main data-barba="container" data-barba-namespace="barba-js-page-transitions">
 
-      <div class="container">
-        <h2 class="article-heading">Perform seamless <span class="pink-heading-bg">page transitions without refresh</span> using barba.js.</h2>
+      <div class="container section centered">
+        <h2 class="article-heading">Seamless <span class="pink-heading-bg">page transitions</span> without refresh</h2>
+        <h5>Implementing page navigation without browser refresh. Static files are not reloaded and the transition is seamless.</h5>
       </div>
 
-      <div class="container">
+      <div class="container section centered article-body">
         <a href="http://karanmhatre.com/barba-page-transition-example/index.html" target="_blank">
           <img src="img/barba-page-transition.gif" alt="Example showing page transition without refresh">
         </a>
+        <br><br>
         <blockquote>
         <p>Create badass fluid and smooth transitions between your website’s pages. - <a href="https://barba.js.org">Barba JS</a></p>
         </blockquote>
@@ -55,13 +64,13 @@
           <li>Remove &quot;.loading-screen&quot;.</li>
           <li>Animate the new page content.</li>
         </ol>
-        <hr>
+        
         <h3 id="understanding-supporting-functions">Understanding Supporting Functions</h3>
         <p>
           <code>function loadingAnimation()</code> - This function shows and hides the &quot;.loading-screen&quot;, which is a fullpage screen used to transition between pages.</p>
         <p>
           <code>function contentAnimation()</code> - All the content on the page starts with <code>opacity: 0</code>. This function animates on all on screen elements into visibility.</p>
-        <hr>
+        
         <h3 id="barba-hooks">Barba Hooks</h3>
         <script src="https://gist.github.com/karanmhatre1/554423a0cc02449a80bf2cc3dd13bd9e.js"></script>
         <p>These are barba js hooks.</p>
@@ -69,35 +78,36 @@
         <p><b>leave</b> is called when you move out of one page to another. While moving out of the page, we want to call <code>loadingAnimation()</code>, wait 1s, and then pass control to the next hook .i.e. &quot;Enter&quot;.</p>
         <p><b>enter</b> is called when you enter a new page. As soon as we enter the page, we want to call <code>contentAnimate</code> to show all the elements on this page.</p>
 
-        <hr>
+        
 
         <p>Find the complete documentation for usage at <a href="https://github.com/karanmhatre1/barba-page-transition-example" target="_blank">FlowChat JS on Github</a>.</p>
         
       </div>
     </main>
 
-      <div class="container last-container">
-        <ul class="social-links">
-          <li>
-            <a href="https://www.instagram.com/onesquarekaran/" target="_blank"><i class="fab fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href="https://github.com/karanmhatre1" target="_blank"><i class="fab fa-github"></i></a>
-          </li>
-          <li>
-            <a href="https://medium.com/@me_12358" target="_blank"><i class="fab fa-medium"></i></a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/karanmhatre/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          </li>
-          <li>
-            <a href="https://www.behance.net/karanmhatre/" target="_blank"><i class="fab fa-behance"></i></a>
-          </li>
-          <li>
-            <a href="mailto:me@karanmhatre.com" target="_blank"><i class="fas fa-envelope"></i></a>
-          </li>
-        </ul>
-      </div>
+    <div class="container section">
+      <ul class="social-links">
+        <li>
+          <a href="https://www.instagram.com/onesquarekaran/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://github.com/karanmhatre1" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+        <li>
+          <a href="https://medium.com/@me_12358" target="_blank"><i class="fab fa-medium"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/karanmhatre/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </li>
+        <li>
+          <a href="https://www.behance.net/karanmhatre/" target="_blank"><i class="fab fa-behance"></i></a>
+        </li>
+      </ul>
+      <br>
+      <p class="tac">
+        <a href="mailto:me@karanmhatre.com" target="_blank"><i class="fas fa-envelope"></i> me@karanmhatre.com</a>
+      </p>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>

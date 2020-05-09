@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <title>Karan Mhatre | Illustrator</title>
+    <meta name="description" content="I’m a Digital Product Manager with expertise in digital technologies, consumer behaviour, and UX research.">
+    <meta name="keywords" content="Karan, Mhatre, Digital, Product, Manager, Product Manager, India, Mumbai, Healthcare">
+    <head>
+      <meta charset="utf-8">
+
+      <link rel="icon" type="image/png" href="img/favicon.png" />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display|Poppins&display=swap" rel="stylesheet">
+
+      <meta name="author" content="Karan Mhatre">
+      <meta name="theme-color" content="#FF7C02" />
+
+      <link rel="stylesheet" href="main.css">
+    </head>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="exploration-space">
+        <h1>Illustrations by Karan Mhatre.</h1>
+        <p>I don't know what the best way to show my illustrations is. <br>I'm sure this is no where close to being the best way. <br>But, it's fun. So, have fun.</p>  
+      </div>
+      <div class="image-display">
+        <div class="image-display-inner">
+          <img src="" alt="">
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script>
+      $(function() {
+
+        $('.exploration-space').on( "click", function( event ) {
+          columnCount = 10;
+          rowCount = 10;
+
+          height = $(window).height();
+          heightUnit = height/columnCount;
+          
+          width = $(window).width();
+          widthUnit = width/columnCount;
+
+          quadX = Math.floor(event.pageX/widthUnit, 0);
+          quadY = Math.floor(event.pageY/heightUnit, 0);
+
+          quad = quadX + (Math.floor(event.pageY/heightUnit)*rowCount) + 1;
+
+          window.open('art/'+quad+'.jpg');
+        });
+        
+        $('.exploration-space').on( "mousemove", function( event ) {
+
+          columnCount = 10;
+          rowCount = 10;
+
+          height = $(window).height();
+          heightUnit = Math.floor(height/columnCount);
+          
+          width = $('.exploration-space').width();
+          widthUnit = Math.floor(width/columnCount);
+
+          quadX = Math.floor(event.pageX/widthUnit, 0);
+          quadY = Math.floor(event.pageY/heightUnit, 0);
+
+          quad = quadX + (quadY*rowCount) + 1;
+
+          console.log(event.pageY + " " + heightUnit + " " + height);
+
+
+          $('.image-display-inner img').attr('src' , 'art/'+quad+'.jpg')
+
+
+          $("<img style='width:" + widthUnit + "px; height:"+ heightUnit +"px; top:" + (quadY*heightUnit) + "px; left: " + (quadX*widthUnit) + "px;' class='floating-image' src='" + "art/"+quad+".jpg'>").appendTo(".exploration-space"); 
+
+          $('.image-display-inner img').attr('src' , 'art/'+quad+'.jpg')
+
+          heightUnit
+
+//           imgWidth = $('img.art').width();
+//           imgHeight = $('img.art').height();
+// 
+//           $('img.art').css('left', event.pageX);
+//           $('img.art').css('top', event.pageY);
+// 
+//           if((event.pageX + imgWidth) > width)
+//             $('img.art').css('left', event.pageX-imgWidth);
+// 
+//           if((event.pageY + imgHeight) > height)
+//             $('img.art').css('top', event.pageY-imgHeight);
+// 
+//           if((event.pageY + imgHeight) > height)
+//             $('img.art').css('top', event.pageY-imgHeight);
+
+        });
+
+      });
+
+    </script>
+
+    <script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement("script");r.type="text/javascript",r.async=!0,r.src="https://cdn.heapanalytics.com/js/heap-"+e+".js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","resetIdentity","removeEventProperty","setEventProperties","track","unsetEventProperty"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};
+        heap.load("844080648");
+    </script>
+  
+  </body>
+</html>

@@ -11,7 +11,7 @@
       <link rel="stylesheet" href="flowchat-js/src/flowchat.css">
 
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,800|Open+Sans:400,700|Lora:400,700&display=swap" rel="stylesheet">
 
       <meta name="author" content="Karan Mhatre">
       <meta name="theme-color" content="#FF7C02" />
@@ -28,35 +28,34 @@
     <!-- Add your site or application content here -->
 
     <header>
-      <h1><a href="index.html"><span class="back-button">⟵</span> Karan Mhatre</a></h1>
+      <h1><a href="index.html">Karan Mhatre</a></h1>
     </header>
 
     <main data-barba="container" data-barba-namespace="flow-chat-js">
 
-      <div class="container">
-        <h2>Flow Chat JS</h2>
-        <p>A Javascript plugin to help developers <span class="pink-heading-bg">build simple conversational chat flow.</span></p>
-        <p>This plugin allows you to input a JSON file and build a conversational chat flow. Each option the user select leads them to the next message. Each user can have their own journey.</p>
+      <div class="container centered section">
+        <h2 class="article-heading">Flow Chat JS - Javascript based <span class="pink-heading-bg">Chat Bot</span> Builder</h2>
+        <h5>This plugin allows you to input a JSON file and build a conversational chat flow. Each option the user select leads them to the next message. Each user can have their own journey.</h5>
       </div>
 
-      <div class="container">
+      <div class="container centered article-body">
         <div class="flowchat-container" id="fc-container-1"></div>
-        <hr>
         <h3>Playground</h3>
         <p>Below is a simple example along with the JSON for you to play around with. Change the JSON, click Refresh and see the magic.</p>
-        <ul class="img-section flowchat-editor">
-          <li>
-            <div class="json-container">
-              <a href="javascript:void(0);" class="startButton" id="resetButton">Reset JSON</a>
-              <a href="javascript:void(0);" class="startButton" id="applyButton">Apply</a>
-              <pre id="json-display"></pre>
-            </div>
-          </li>
-          <li>
-            <div class="flowchat-container" id="fc-container-2"></div>
-          </li>
-        </ul>
-        <hr>
+      </div>
+      <ul class="flowchat-editor">
+        <li>
+          <div class="json-container">
+            <a href="javascript:void(0);" class="startButton" id="resetButton">Reset JSON</a>
+            <a href="javascript:void(0);" class="startButton" id="applyButton">Apply</a>
+            <pre id="json-display"></pre>
+          </div>
+        </li>
+        <li>
+          <div class="flowchat-container" id="fc-container-2"></div>
+        </li>
+      </ul>
+      <div class="container section centered article-body">
         <h3>Use Cases</h3>
         <p>Some of the usecases for this are:</p>
         <ul>
@@ -69,7 +68,7 @@
       </div>
     </main>
     
-    <div class="container last-container">
+    <div class="container section">
       <ul class="social-links">
         <li>
           <a href="https://www.instagram.com/onesquarekaran/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -86,10 +85,11 @@
         <li>
           <a href="https://www.behance.net/karanmhatre/" target="_blank"><i class="fab fa-behance"></i></a>
         </li>
-        <li>
-          <a href="mailto:me@karanmhatre.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        </li>
       </ul>
+      <br>
+      <p class="tac">
+        <a href="mailto:me@karanmhatre.com" target="_blank"><i class="fas fa-envelope"></i> me@karanmhatre.com</a>
+      </p>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
