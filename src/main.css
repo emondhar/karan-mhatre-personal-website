@@ -70,6 +70,11 @@ a.block-link:hover span > span {
 
 /* header */
 
+.heading a {
+  color: #ff7073;
+  border-bottom: 1px dotted #ff7073;
+}
+  
 header {
   padding: 60px 0px;
 }
