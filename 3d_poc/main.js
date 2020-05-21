@@ -3,7 +3,12 @@ function preloadImage(url, id)
   var img=new Image();
   img.src=url;
 
-  $('#loader span').text(id*(100/35) + '%');
+  img.onload = function(){
+    thisId = parseInt($(this).attr('src').split('/')[1].split('.')[0])
+    perc = Math.floor(thisId*(100/35));
+    console.log(perc);
+    $('#loader span').text( perc + '%');
+  }
 
   if(id == 35) {
     img.onload = function(){
@@ -23,7 +28,7 @@ $(function() {
   var imgContainer = $('#imgContainer').get(0);
   var mc = new Hammer(imgContainer);
 
-  mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+  // mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 
   var count = 15;
 
@@ -32,7 +37,7 @@ $(function() {
     var imgModel = $('#imgModel'),
         currentImg = parseInt(imgModel.attr('src').split('/')[1].split('.')[0]);
 
-     speed = 0.3;
+     speed = 0.6;
 
     if(ev.type == 'panleft') {
       count = count + speed

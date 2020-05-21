@@ -24,6 +24,8 @@ body {
   line-height: 100vh;
   background-color: #fff;
   z-index: 1;
+  font-size: 10vw;
+  font-weight: 900;
 }
 
 @media only screen and (max-width: 600px) {
