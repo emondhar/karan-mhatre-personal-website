@@ -1,4 +1,14 @@
+function preloadImage(url)
+{
+    var img=new Image();
+    img.src=url;
+}
+
 $(function() {
+
+  for(var i = 1; i <36; i++)
+    preloadImage('img3d/'+i+'.jpg');
+
   $('#imgModel').attr('draggable', false);
 
   var imgContainer = $('#imgContainer').get(0);
