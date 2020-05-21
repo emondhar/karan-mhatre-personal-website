@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Arial', sans-serif;
+}
+
 #imgContainer {
   padding-top: 10vh;
   max-width: 1024px;
@@ -10,6 +14,16 @@
 
 #imgContainer img {
   width: 100%;
+}
+
+#loader {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100vh;
+  background-color: #fff;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 600px) {

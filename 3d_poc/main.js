@@ -1,13 +1,22 @@
-function preloadImage(url)
+function preloadImage(url, id)
 {
-    var img=new Image();
-    img.src=url;
+  var img=new Image();
+  img.src=url;
+
+  $('#loader span').text(id*(100/35) + '%');
+
+  if(id == 35) {
+    img.onload = function(){
+      $('#loader').hide();
+    }
+  }
 }
+
 
 $(function() {
 
   for(var i = 1; i <36; i++)
-    preloadImage('img3d/'+i+'.jpg');
+    preloadImage('img3d/'+i+'.jpg', i);
 
   $('#imgModel').attr('draggable', false);
 
