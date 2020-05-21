@@ -4,7 +4,8 @@
 
 #imgContainer {
   padding-top: 10vh;
-  max-width: 100vw;
+  max-width: 1024px;
+  margin: auto;
 }
 
 #imgContainer img {
@@ -14,6 +15,7 @@
 @media only screen and (max-width: 600px) {
 
   #imgContainer {
+    height: 100vh;
     padding-top: 20vh;
   }
   
